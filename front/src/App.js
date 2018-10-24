@@ -1,18 +1,19 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react'
+import Router from './Router'
+import Header from './modules/Header'
 
-class App extends Component {
-  render() {
-    return (
-      <Fragment>
-        Zacznij tutaj. Przeczytaj <strong>README.md</strong> i zapoznaj się z treścią zadania
-        rekrutacyjnego.
-        <br/>
-        <a href={`${process.env.REACT_APP_API_URL}/docs`} target="_blank" rel="noopener noreferrer">
-          Dokumentacja API
-        </a>
-      </Fragment>
-    );
-  }
+
+export default function App() {
+  return (
+    <div
+      className="page-container"
+    >
+      <Header />
+
+      <Router />
+    </div>
+
+
+  )
 }
 
-export default App;
