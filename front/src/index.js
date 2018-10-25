@@ -9,6 +9,9 @@ import store from './config/store'
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import './index.css';
+
 dotenv.config();
 
 ReactDOM.render(
