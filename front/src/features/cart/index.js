@@ -1,16 +1,23 @@
 import React from 'react'
 import { connect } from  'react-redux'
 
+
+
 const sort = (items) => {
   return items.sort((a, b) => a.id < b.id)
 }
 
-function Cart(props) {
-  return <table className="table">
+function Cart(props)  {
+
+
+  const hasProducts = props.cart.length > 0
+  const nodes = hasProducts ? (
+
+    <table className="table">
     <thead className="thead-dark">
       <tr>
-      <th scope="col">Item</th>
-      <th scope="col">Quantity</th>
+      <th scope="col">Książka</th>
+      <th scope="col">Ilość</th>
       <th scope="col"></th>
       <th scope="col"></th>
       </tr>
@@ -31,13 +38,24 @@ function Cart(props) {
           <td>
             <button
               onClick={(e) => props.removeAllFromCart(item)}
-            >Remove from cart</button>
+            >Usuń z koszyka</button>
           </td>
         </tr>)
       }
     </tbody>
+
   </table>
+
+
+   
+    )
+   : (
+    <em>Nie masz żadnych książek w koszyku!</em>
+  )
+
+  return  <div>{nodes}</div>
 }
+
 
 function mapStateToProps(state) {
   return {
@@ -49,6 +67,9 @@ function mapDispatchToProps(dispatch) {
   return {
     addToCart: (item) => {
       dispatch({ type: 'ADD', payload: item })
+    },
+    addToOrder: (cart) => {
+      dispatch({ type: 'ADD_TO_ORDER', payload: cart })
     },
     removeFromCart: (item) => {
       dispatch({ type: 'REMOVE', payload: item })

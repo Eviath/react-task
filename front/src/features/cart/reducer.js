@@ -1,6 +1,8 @@
 const cartWithoutItem = (cart, item) => cart.filter(cartItem => cartItem.id !== item.id)
 const itemInCart = (cart, item) => cart.filter(cartItem => cartItem.id === item.id)[0]
 
+
+
 const addToCart = (cart, item) => {
   const cartItem = itemInCart(cart, item)
   return cartItem === undefined

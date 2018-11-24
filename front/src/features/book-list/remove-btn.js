@@ -1,8 +1,10 @@
 import React from 'react'
 
+
+
 export default function RemoveButton(props) {
-  return <button
+  return <button className="btn btn-light btn-block"
 
   onClick={() => props.removeFromCart(props.cartItem)}
-  >Remove</button>
+  >Usuń </button>
 }

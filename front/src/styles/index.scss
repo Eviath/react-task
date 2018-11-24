@@ -1,0 +1,13 @@
+@import '_reset';
+
+// Bootstrap library
+@import 'bootstrap/scss/bootstrap';
+@import '_variables';
+
+// Here you can import more .scss files or write scss code.
+
+// My Bootstrap configuration
+@import '_custom_bootstrap';
+
+// my custom styles
+
