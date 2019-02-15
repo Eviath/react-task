@@ -1,12 +1,17 @@
 import React from 'react';
 import { NavLink   } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Search from './Search'
 
 
 export default class Header extends React.Component {
+
   render() {
+
+
     return (
       <div>
+
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -21,21 +26,23 @@ export default class Header extends React.Component {
       </li>
 
     </ul>
+
+    <Search/>
+
+
    <ul className="navbar-nav mr-auto mr-2 mr-lg-0">
     <li class="nav-item">
-      <NavLink className="nav-link" to="/cart" ><span><FontAwesomeIcon icon="shopping-cart" /></span>Koszyk <span class="badge badge-secondary">3</span></NavLink> 
-      </li>
-      <li class="nav-item">
-      <NavLink className="nav-link" to="/order" >Zamówienie</NavLink> 
+      <NavLink className="nav-link" to="/cart" ><span><FontAwesomeIcon icon="shopping-cart" /></span>Koszyk <span class="badge badge-secondary">3</span></NavLink>
       </li>
       </ul>
   </div>
 </nav>
 
 
-
-
       </div>
+
+
+
     );
   }
 }
